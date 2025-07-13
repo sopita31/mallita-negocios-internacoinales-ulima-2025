@@ -32,14 +32,14 @@
       align-items: stretch;
     }
     h2 {
-      color: #7eb2e5; /* color1 */
+      color: #7eb2e5;
       font-weight: 700;
       text-align: center;
       margin-bottom: 10px;
     }
     .curso {
-      background-color: #c6efed; /* color4 */
-      border: 2px solid #7eb2e5; /* color1 */
+      background-color: #f0fbfc; /* más claro para legibilidad */
+      border: 2px solid #7eb2e5;
       border-radius: 8px;
       display: flex;
       justify-content: space-between;
@@ -48,23 +48,28 @@
       cursor: pointer;
       transition: all 0.3s ease;
       width: 250px;
-      color: #7eb2e5; /* color1 texto */
-      font-weight: 400; /* no negrita */
+      color: #7eb2e5;
+      font-weight: 400;
+      opacity: 1;
     }
     .curso .creditos {
-      background: #96e1e7; /* color3 */
-      border: 1px solid #74c7e4; /* color2 */
+      background: #96e1e7;
+      border: 1px solid #74c7e4;
       border-radius: 4px;
       padding: 2px 8px;
       font-size: 0.9em;
     }
     .curso.tachado {
       text-decoration: line-through;
-      background-color: #96e1e7; /* color3 */
+      background-color: #96e1e7;
       opacity: 0.6;
     }
+    .curso.bloqueado {
+      opacity: 0.4;
+      pointer-events: none;
+    }
     .total-creditos {
-      background-color: #c6efed; /* color4 */
+      background-color: #c6efed;
       border: 2px solid #7eb2e5;
       border-radius: 8px;
       padding: 10px;
@@ -95,9 +100,9 @@
         <span>Lenguaje y Comunicación I</span>
         <span class="creditos">4</span>
       </div>
-      <div class="curso" data-creditos="2" data-curso="Metodologías de Investigación">
+      <div class="curso" data-creditos="3" data-curso="Metodologías de Investigación">
         <span>Metodologías de Investigación</span>
-        <span class="creditos">2</span>
+        <span class="creditos">3</span>
       </div>
       <div class="curso" data-creditos="3" data-curso="Desarrollo Personal y Social">
         <span>Desarrollo Personal y Social</span>
@@ -107,9 +112,9 @@
         <span>Matemática Básica</span>
         <span class="creditos">5</span>
       </div>
-      <div class="curso" data-creditos="3" data-curso="Ética Cívica">
+      <div class="curso" data-creditos="2" data-curso="Ética Cívica">
         <span>Ética Cívica</span>
-        <span class="creditos">3</span>
+        <span class="creditos">2</span>
       </div>
       <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 20</div>
     </div>
@@ -120,9 +125,9 @@
         <span>Economía y Empresa</span>
         <span class="creditos">3</span>
       </div>
-      <div class="curso" data-creditos="4" data-curso="Lenguaje y Comunicación II">
+      <div class="curso" data-creditos="3" data-curso="Lenguaje y Comunicación II" data-requiere="Lenguaje y Comunicación I">
         <span>Lenguaje y Comunicación II</span>
-        <span class="creditos">4</span>
+        <span class="creditos">3</span>
       </div>
       <div class="curso" data-creditos="3" data-curso="Procesos Sociales y Políticos">
         <span>Procesos Sociales y Políticos</span>
@@ -132,11 +137,11 @@
         <span>Temas de Filosofía</span>
         <span class="creditos">3</span>
       </div>
-      <div class="curso" data-creditos="2" data-curso="Estadística Básica para los Negocios">
+      <div class="curso" data-creditos="3" data-curso="Estadística Básica para los Negocios" data-requiere="Matemática Básica">
         <span>Estadística Básica para los Negocios</span>
-        <span class="creditos">2</span>
+        <span class="creditos">3</span>
       </div>
-      <div class="curso" data-creditos="5" data-curso="Matemática Aplicada a los Negocios">
+      <div class="curso" data-creditos="5" data-curso="Matemática Aplicada a los Negocios" data-requiere="Matemática Básica">
         <span>Matemática Aplicada a los Negocios</span>
         <span class="creditos">5</span>
       </div>
@@ -161,23 +166,41 @@
       contador.textContent = `Llevas aprobados: ${total} créditos`;
     }
 
+    function actualizarDisponibilidad() {
+      cursos.forEach(curso => {
+        const prereq = curso.getAttribute('data-requiere');
+        if (prereq) {
+          if (localStorage.getItem(prereq) === 'aprobado') {
+            curso.classList.remove('bloqueado');
+          } else {
+            curso.classList.add('bloqueado');
+          }
+        }
+      });
+    }
+
     cursos.forEach(curso => {
       let nombre = curso.getAttribute('data-curso');
       if (localStorage.getItem(nombre) === 'aprobado') {
         curso.classList.add('tachado');
       }
+    });
 
+    cursos.forEach(curso => {
       curso.addEventListener('click', () => {
+        let nombre = curso.getAttribute('data-curso');
         curso.classList.toggle('tachado');
         if (curso.classList.contains('tachado')) {
           localStorage.setItem(nombre, 'aprobado');
         } else {
           localStorage.removeItem(nombre);
         }
+        actualizarDisponibilidad();
         actualizarContador();
       });
     });
 
+    actualizarDisponibilidad();
     actualizarContador();
   </script>
 </body>
