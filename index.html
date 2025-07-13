@@ -2,98 +2,138 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla - Negocios Internacionales</title>
+  <title>Malla - Negocios Internacionales ULIMA 2025</title>
   <style>
     body {
       font-family: sans-serif;
       padding: 20px;
+      background-color: #dff6ff; /* fondo baby blue */
+    }
+    h1 {
+      text-align: center;
+      color: #001f54; /* azul navy */
     }
     h2 {
+      color: #001f54;
       margin-top: 30px;
     }
+    .nivel {
+      display: flex;
+      flex-direction: column; /* columnas */
+      gap: 10px;
+      margin-bottom: 30px;
+    }
     .curso {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px;
-      border: 2px solid #444;
+      background-color: #ebf8ff; /* fondo baby muy baby blue */
+      color: #001f54; /* texto navy */
+      border: 2px solid #001f54;
       border-radius: 8px;
+      padding: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
+      width: fit-content;
     }
     .curso.tachado {
       text-decoration: line-through;
-      opacity: 0.5;
+      background-color: #b3d4f1; /* azul mas opaco */
+      opacity: 0.6;
     }
     .creditos {
       font-size: 0.9em;
-      color: #555;
+      color: #001f54;
       display: block;
       margin-top: 5px;
+    }
+    #contador {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #001f54;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>📚 Malla - Negocios Internacionales ULIMA 2025</h1>
+  <h1>Malla - Negocios Internacionales ULIMA 2025</h1>
 
-  <h2>🔵 Nivel 1</h2>
-  <div class="curso" data-curso="Globalización y Realidad Nacional">
-    Globalización y Realidad Nacional
-    <span class="creditos">3 créditos</span>
-  </div>
-  <div class="curso" data-curso="Lenguaje y Comunicación I">
-    Lenguaje y Comunicación I
-    <span class="creditos">4 créditos</span>
-  </div>
-  <div class="curso" data-curso="Metodologías de Investigación">
-    Metodologías de Investigación
-    <span class="creditos">2 créditos</span>
-  </div>
-  <div class="curso" data-curso="Desarrollo Personal y Social">
-    Desarrollo Personal y Social
-    <span class="creditos">3 créditos</span>
-  </div>
-  <div class="curso" data-curso="Matemática Básica">
-    Matemática Básica
-    <span class="creditos">5 créditos</span>
-  </div>
-  <div class="curso" data-curso="Ética Cívica">
-    Ética Cívica
-    <span class="creditos">3 créditos</span>
+  <div class="nivel">
+    <h2>Nivel 1</h2>
+    <div class="curso" data-creditos="3" data-curso="Globalización y Realidad Nacional">
+      Globalización y Realidad Nacional
+      <span class="creditos">3 créditos</span>
+    </div>
+    <div class="curso" data-creditos="4" data-curso="Lenguaje y Comunicación I">
+      Lenguaje y Comunicación I
+      <span class="creditos">4 créditos</span>
+    </div>
+    <div class="curso" data-creditos="2" data-curso="Metodologías de Investigación">
+      Metodologías de Investigación
+      <span class="creditos">2 créditos</span>
+    </div>
+    <div class="curso" data-creditos="3" data-curso="Desarrollo Personal y Social">
+      Desarrollo Personal y Social
+      <span class="creditos">3 créditos</span>
+    </div>
+    <div class="curso" data-creditos="5" data-curso="Matemática Básica">
+      Matemática Básica
+      <span class="creditos">5 créditos</span>
+    </div>
+    <div class="curso" data-creditos="3" data-curso="Ética Cívica">
+      Ética Cívica
+      <span class="creditos">3 créditos</span>
+    </div>
   </div>
 
-  <h2>🟢 Nivel 2</h2>
-  <div class="curso" data-curso="Economía y Empresa">
-    Economía y Empresa
-    <span class="creditos">3 créditos</span>
+  <div class="nivel">
+    <h2>Nivel 2</h2>
+    <div class="curso" data-creditos="3" data-curso="Economía y Empresa">
+      Economía y Empresa
+      <span class="creditos">3 créditos</span>
+    </div>
+    <div class="curso" data-creditos="4" data-curso="Lenguaje y Comunicación II">
+      Lenguaje y Comunicación II
+      <span class="creditos">4 créditos</span>
+    </div>
+    <div class="curso" data-creditos="3" data-curso="Procesos Sociales y Políticos">
+      Procesos Sociales y Políticos
+      <span class="creditos">3 créditos</span>
+    </div>
+    <div class="curso" data-creditos="3" data-curso="Temas de Filosofía">
+      Temas de Filosofía
+      <span class="creditos">3 créditos</span>
+    </div>
+    <div class="curso" data-creditos="2" data-curso="Estadística Básica para los Negocios">
+      Estadística Básica para los Negocios
+      <span class="creditos">2 créditos</span>
+    </div>
+    <div class="curso" data-creditos="5" data-curso="Matemática Aplicada a los Negocios">
+      Matemática Aplicada a los Negocios
+      <span class="creditos">5 créditos</span>
+    </div>
   </div>
-  <div class="curso" data-curso="Lenguaje y Comunicación II">
-    Lenguaje y Comunicación II
-    <span class="creditos">4 créditos</span>
-  </div>
-  <div class="curso" data-curso="Procesos Sociales y Políticos">
-    Procesos Sociales y Políticos
-    <span class="creditos">3 créditos</span>
-  </div>
-  <div class="curso" data-curso="Temas de Filosofía">
-    Temas de Filosofía
-    <span class="creditos">3 créditos</span>
-  </div>
-  <div class="curso" data-curso="Estadística Básica para los Negocios">
-    Estadística Básica para los Negocios
-    <span class="creditos">2 créditos</span>
-  </div>
-  <div class="curso" data-curso="Matemática Aplicada a los Negocios">
-    Matemática Aplicada a los Negocios
-    <span class="creditos">5 créditos</span>
-  </div>
+
+  <div id="contador">Llevas aprobados: 0 créditos</div>
 
   <script>
     const cursos = document.querySelectorAll('.curso');
+    const contador = document.getElementById('contador');
+
+    function actualizarContador() {
+      let total = 0;
+      cursos.forEach(curso => {
+        let nombre = curso.getAttribute('data-curso');
+        if (localStorage.getItem(nombre) === 'aprobado') {
+          total += parseInt(curso.getAttribute('data-creditos'));
+        }
+      });
+      contador.textContent = `Llevas aprobados: ${total} créditos`;
+    }
+
     cursos.forEach(curso => {
       let nombre = curso.getAttribute('data-curso');
       if (localStorage.getItem(nombre) === 'aprobado') {
         curso.classList.add('tachado');
       }
+
       curso.addEventListener('click', () => {
         curso.classList.toggle('tachado');
         if (curso.classList.contains('tachado')) {
@@ -101,8 +141,11 @@
         } else {
           localStorage.removeItem(nombre);
         }
+        actualizarContador();
       });
     });
+
+    actualizarContador();
   </script>
 </body>
 </html>
