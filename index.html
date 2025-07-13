@@ -1,208 +1,159 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Malla - Negocios Internacionales ULIMA 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Comfortaa', sans-serif;
-      background-color: #f3efed; /* color5 */
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      text-align: center;
-      color: #7eb2e5; /* color1 */
-      font-weight: 700;
-      width: 100%;
-      margin-bottom: 30px;
-    }
-    #contenedor {
-      display: flex;
-      gap: 50px;
-      align-items: flex-start;
-    }
-    .nivel {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      align-items: stretch;
-    }
-    h2 {
-      color: #7eb2e5;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    .curso {
-      background-color: #f0fbfc; /* más claro para legibilidad */
-      border: 2px solid #7eb2e5;
-      border-radius: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: 250px;
-      color: #7eb2e5;
-      font-weight: 400;
-      opacity: 1;
-    }
-    .curso .creditos {
-      background: #96e1e7;
-      border: 1px solid #74c7e4;
-      border-radius: 4px;
-      padding: 2px 8px;
-      font-size: 0.9em;
-    }
-    .curso.tachado {
-      text-decoration: line-through;
-      background-color: #96e1e7;
-      opacity: 0.6;
-    }
-    .curso.bloqueado {
-      opacity: 0.4;
-      pointer-events: none;
-    }
-    .total-creditos {
-      background-color: #c6efed;
-      border: 2px solid #7eb2e5;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-      color: #7eb2e5;
-      font-weight: 700;
-      width: 250px;
-      margin-top: 15px;
-    }
-    #contador {
-      margin-top: 40px;
-      font-size: 1.2em;
-      color: #7eb2e5;
-      font-weight: 700;
-    }
-  </style>
-</head>
-<body>
-  <h1>Malla - Negocios Internacionales ULIMA 2025</h1>
-  <div id="contenedor">
-    <div class="nivel" data-total="20">
-      <h2>Nivel 1</h2>
-      <div class="curso" data-creditos="3" data-curso="Globalización y Realidad Nacional">
-        <span>Globalización y Realidad Nacional</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="4" data-curso="Lenguaje y Comunicación I">
-        <span>Lenguaje y Comunicación I</span>
-        <span class="creditos">4</span>
-      </div>
-      <div class="curso" data-creditos="3" data-curso="Metodologías de Investigación">
-        <span>Metodologías de Investigación</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="3" data-curso="Desarrollo Personal y Social">
-        <span>Desarrollo Personal y Social</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="5" data-curso="Matemática Básica">
-        <span>Matemática Básica</span>
-        <span class="creditos">5</span>
-      </div>
-      <div class="curso" data-creditos="2" data-curso="Ética Cívica">
-        <span>Ética Cívica</span>
-        <span class="creditos">2</span>
-      </div>
-      <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 20</div>
+<div id="contenedor">
+  <!-- Nivel 1 -->
+  <div class="nivel" data-total="20">
+    <h2>Nivel 1</h2>
+    <div class="curso" data-creditos="3" data-codigo="6501" data-curso="Globalización y Realidad Nacional">
+      <span>Globalización y Realidad Nacional (6501)</span><span class="creditos">3</span>
     </div>
-
-    <div class="nivel" data-total="20">
-      <h2>Nivel 2</h2>
-      <div class="curso" data-creditos="3" data-curso="Economía y Empresa">
-        <span>Economía y Empresa</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="3" data-curso="Lenguaje y Comunicación II" data-requiere="Lenguaje y Comunicación I">
-        <span>Lenguaje y Comunicación II</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="3" data-curso="Procesos Sociales y Políticos">
-        <span>Procesos Sociales y Políticos</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="3" data-curso="Temas de Filosofía">
-        <span>Temas de Filosofía</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="3" data-curso="Estadística Básica para los Negocios" data-requiere="Matemática Básica">
-        <span>Estadística Básica para los Negocios</span>
-        <span class="creditos">3</span>
-      </div>
-      <div class="curso" data-creditos="5" data-curso="Matemática Aplicada a los Negocios" data-requiere="Matemática Básica">
-        <span>Matemática Aplicada a los Negocios</span>
-        <span class="creditos">5</span>
-      </div>
-      <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 20</div>
+    <div class="curso" data-creditos="4" data-codigo="6502" data-curso="Lenguaje y Comunicación I">
+      <span>Lenguaje y Comunicación I (6502)</span><span class="creditos">4</span>
     </div>
+    <div class="curso" data-creditos="3" data-codigo="6503" data-curso="Metodologías de Investigación">
+      <span>Metodologías de Investigación (6503)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="6504" data-curso="Desarrollo Personal y Social">
+      <span>Desarrollo Personal y Social (6504)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="5" data-codigo="6505" data-curso="Matemática Básica">
+      <span>Matemática Básica (6505)</span><span class="creditos">5</span>
+    </div>
+    <div class="curso" data-creditos="2" data-codigo="6506" data-curso="Ética Cívica">
+      <span>Ética Cívica (6506)</span><span class="creditos">2</span>
+    </div>
+    <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 20</div>
   </div>
 
-  <div id="contador">Llevas aprobados: 0 créditos</div>
+  <!-- Nivel 2 -->
+  <div class="nivel" data-total="20">
+    <h2>Nivel 2</h2>
+    <div class="curso" data-creditos="3" data-codigo="6510" data-curso="Economía y Empresa">
+      <span>Economía y Empresa (6510)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="6511" data-curso="Lenguaje y Comunicación II" data-requiere="Lenguaje y Comunicación I">
+      <span>Lenguaje y Comunicación II (6511)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="6512" data-curso="Procesos Sociales y Políticos">
+      <span>Procesos Sociales y Políticos (6512)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="6513" data-curso="Temas de Filosofía">
+      <span>Temas de Filosofía (6513)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="6502B" data-curso="Estadística Básica para los Negocios" data-requiere="Matemática Básica">
+      <span>Estadística Básica para los Negocios (6502B)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="5" data-codigo="6337" data-curso="Matemática Aplicada a los Negocios" data-requiere="Matemática Básica">
+      <span>Matemática Aplicada a los Negocios (6337)</span><span class="creditos">5</span>
+    </div>
+    <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 20</div>
+  </div>
 
-  <script>
-    const cursos = document.querySelectorAll('.curso');
-    const contador = document.getElementById('contador');
+  <!-- Nivel 3 -->
+  <div class="nivel" data-total="21">
+    <h2>Nivel 3</h2>
+    <div class="curso" data-creditos="4" data-codigo="520031" data-curso="Estadística para la Gestión Empresarial I" data-requiere="Estadística Básica para los Negocios">
+      <span>Estadística Gestión Empresarial I (520031)</span><span class="creditos">4</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="530631" data-curso="Cross-Cultural Management" data-requiere="Procesos Sociales y Políticos">
+      <span>Cross-Cultural Management (530631)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="530632" data-curso="Introducción a International Business" data-requiere="Economía y Empresa">
+      <span>Introducción a Int. Business (530632)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="4" data-codigo="3232" data-curso="Matemática para la Gestión de Negocios" data-requiere="Matemática Aplicada a los Negocios">
+      <span>Matemática Gestión Negocios (3232)</span><span class="creditos">4</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="530650" data-curso="Relaciones Internacionales" data-requiere="Procesos Sociales y Políticos">
+      <span>Relaciones Internacionales (530650)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="4" data-codigo="4123" data-curso="Contabilidad General" data-requiere="Matemática Aplicada a los Negocios">
+      <span>Contabilidad General (4123)</span><span class="creditos">4</span>
+    </div>
+    <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 21</div>
+  </div>
 
-    function actualizarContador() {
-      let total = 0;
-      cursos.forEach(curso => {
-        let nombre = curso.getAttribute('data-curso');
-        if (localStorage.getItem(nombre) === 'aprobado') {
-          total += parseInt(curso.getAttribute('data-creditos'));
-        }
-      });
-      contador.textContent = `Llevas aprobados: ${total} créditos`;
-    }
+  <!-- Nivel 4 -->
+  <div class="nivel" data-total="21">
+    <h2>Nivel 4</h2>
+    <div class="curso" data-creditos="3" data-codigo="530633" data-curso="Regulation of International Business Transactions" data-requiere="Introducción a International Business">
+      <span>Reg. Int. Business Transactions (530633)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="3326" data-curso="Microeconomía" data-requiere="Introducción a International Business">
+      <span>Microeconomía (3326)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="4" data-codigo="520034" data-curso="Estadística para la Gestión Empresarial II" data-requiere="Estadística para la Gestión Empresarial I">
+      <span>Estadística Gestión Empresarial II (520034)</span><span class="creditos">4</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="530634" data-curso="Economic Integration Processes" data-requiere="Relaciones Internacionales">
+      <span>Economic Integration Processes (530634)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="5" data-codigo="530635" data-curso="Marketing Internacional" data-requiere="Estadística para la Gestión Empresarial I">
+      <span>Marketing Internacional (530635)</span><span class="creditos">5</span>
+    </div>
+    <div class="curso" data-creditos="4" data-codigo="4384" data-curso="Costos y Presupuestos" data-requiere="Contabilidad General">
+      <span>Costos y Presupuestos (4384)</span><span class="creditos">4</span>
+    </div>
+    <div class="curso" data-creditos="2" data-codigo="530636" data-curso="International Business Workshop I" data-requiere="Lenguaje y Comunicación II">
+      <span>Int. Business Workshop I (530636)</span><span class="creditos">2</span>
+    </div>
+    <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 21</div>
+  </div>
 
-    function actualizarDisponibilidad() {
-      cursos.forEach(curso => {
-        const prereq = curso.getAttribute('data-requiere');
-        if (prereq) {
-          if (localStorage.getItem(prereq) === 'aprobado') {
-            curso.classList.remove('bloqueado');
-          } else {
-            curso.classList.add('bloqueado');
-          }
-        }
-      });
-    }
+  <!-- Nivel 5 -->
+  <div class="nivel" data-total="19">
+    <h2>Nivel 5</h2>
+    <div class="curso" data-creditos="3" data-codigo="530637" data-curso="Exports, Imports and Customs" data-requiere="Regulation of International Business Transactions">
+      <span>Exports, Imports and Customs (530637)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="3325" data-curso="Macroeconomía" data-requiere="Microeconomía">
+      <span>Macroeconomía (3325)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="530638" data-curso="Métodos Cuantitativos en Negocios Internacionales" data-requiere="Estadística para la Gestión Empresarial II">
+      <span>Métodos Cuantitativos NI (530638)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="530639" data-curso="Inteligencia en los Negocios y Big Data" data-requiere="Marketing Internacional">
+      <span>Inteligencia Negocios Big Data (530639)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="4" data-codigo="530607" data-curso="Inteligencia de Mercados Internacionales" data-requiere="Marketing Internacional">
+      <span>Inteligencia Mercados Int. (530607)</span><span class="creditos">4</span>
+    </div>
+    <div class="curso" data-creditos="3" data-codigo="530640" data-curso="Emprendimiento de Negocios Globales y Digitales" data-requiere="Marketing Internacional">
+      <span>Emprend. Negocios Globales (530640)</span><span class="creditos">3</span>
+    </div>
+    <div class="curso" data-creditos="2" data-codigo="530641" data-curso="International Business Workshop II" data-requiere="Introducción a International Business">
+      <span>Int. Business Workshop II (530641)</span><span class="creditos">2</span>
+    </div>
+    <div class="total-creditos">CRÉDITOS OBLIGATORIOS: 19</div>
+  </div>
 
-    cursos.forEach(curso => {
-      let nombre = curso.getAttribute('data-curso');
-      if (localStorage.getItem(nombre) === 'aprobado') {
-        curso.classList.add('tachado');
-      }
-    });
+  <!-- Nivel 6 -->
+  <div class="nivel" data-total="19">
+    <h2>Nivel 6</h2>
+    <div class="curso\" data-creditos=\"3\" data-codigo=\"530642\" data-curso=\"International Logistics I\" data-requiere=\"Exports, Imports and Customs\">
+      <span>International Logistics I (530642)</span><span class=\"creditos\">3</span>
+    </div>
+    <div class=\"curso\" data-creditos=\"3\" data-codigo=\"530611\" data-curso=\"Teoría del Comercio Internacional\" data-requiere=\"Macroeconomía\">
+      <span>Teoría Comercio Internacional (530611)</span><span class=\"creditos\">3</span>
+    </div>
+    <div class=\"curso\" data-creditos=\"4\" data-codigo=\"530643\" data-curso=\"International Business Strategies and Sustainability\" data-requiere=\"Macroeconomía\">
+      <span>Business Strategies & Sustainability (530643)</span><span class=\"creditos\">4</span>
+    </div>
+    <div class=\"curso\" data-creditos=\"3\" data-codigo=\"530644\" data-curso=\"Desarrollo e Innovación de Servicios Internacionales\" data-requiere=\"Macroeconomía\">
+      <span>Desarrollo Servicios Int. (530644)</span><span class=\"creditos\">3</span>
+    </div>
+    <div class=\"curso\" data-creditos=\"3\" data-codigo=\"530645\" data-curso=\"Comportamiento de Mercados Internacionales\" data-requiere=\"Inteligencia de Mercados Internacionales\">
+      <span>Comportamiento Mercados Int. (530645)</span><span class=\"creditos\">3</span>
+    </div>
+    <div class=\"curso\" data-creditos=\"3\" data-codigo=\"530646\" data-curso=\"Finanzas Empresariales I\" data-requiere=\"Matemática para la Gestión de Negocios\">
+      <span>Finanzas Empresariales I (530646)</span><span class=\"creditos\">3</span>
+    </div>
+    <div class=\"curso\" data-creditos=\"3\" data-codigo=\"4148\" data-curso=\"Data Analytics Aplicado a los Negocios Internacionales\" data-requiere=\"Inteligencia en los Negocios y Big Data\">
+      <span>Data Analytics NI (4148)</span><span class=\"creditos\">3</span>
+    </div>
+    <div class=\"curso\" data-creditos=\"3\" data-codigo=\"530648\" data-curso=\"Cooperación Internacional para el Desarrollo Sostenible\" data-requiere=\"Economic Integration Processes\">
+      <span>Cooperación Int. Desarrollo Sostenible (530648)</span><span class=\"creditos\">3</span>
+    </div>
+    <div class=\"total-creditos\">CRÉDITOS OBLIGATORIOS: 19</div>
+  </div>
+</div>
 
-    cursos.forEach(curso => {
-      curso.addEventListener('click', () => {
-        let nombre = curso.getAttribute('data-curso');
-        curso.classList.toggle('tachado');
-        if (curso.classList.contains('tachado')) {
-          localStorage.setItem(nombre, 'aprobado');
-        } else {
-          localStorage.removeItem(nombre);
-        }
-        actualizarDisponibilidad();
-        actualizarContador();
-      });
-    });
-
-    actualizarDisponibilidad();
-    actualizarContador();
-  </script>
-</body>
-</html>
 
